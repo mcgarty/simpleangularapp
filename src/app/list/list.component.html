@@ -1,0 +1,10 @@
+
+<h1>"List Of Breweries" from external API after adding the HttpClient service</h1>
+
+<ul *ngIf="brews">
+  <li *ngFor="let brew of brews">
+    <p class="name">{{ brew.name }}</p>
+    <p class="country">{{ brew.country }}</p>
+    <a class="site" href="{{ brew.website_url }}">site</a>
+  </li>
+</ul>

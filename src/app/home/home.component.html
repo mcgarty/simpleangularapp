@@ -1,0 +1,69 @@
+<h1>Angular Tests</h1>
+
+
+    <div class="play-container">
+        <p>You've clicked an angular (click) event running <br> <br> <span (click)="countClick()">this js function in home.component.ts</span> {{ clickCounter }} times.</p>
+    </div>
+
+
+    <div class="play-container" [ngStyle]="{'background-color': 'red'}">
+        <p>
+            <input type="text" [(ngModel)]="name"><br>
+            <strong>displaying NG Model databinding: </strong> {{ name }}
+        </p>
+    </div>
+
+
+    <div class="play-container" [style.background-color]="clickCounter > 3 ? 'yellow' : 'lightgray'">
+
+        <ng-template [ngIf]="clickCounter > 3" [ngIfElse]="none1">
+            <p>The click counter <strong>IS GREATER</strong> than 3.</p>
+        </ng-template>
+
+        <ng-template #none1>
+            <p>The click counter is <strong>not greater</strong> than 3.</p>
+        </ng-template>
+        
+    </div>
+
+
+
+    <div class="play-container" [ngStyle]="{
+    'background-color': clickCounter > 4 ? 'green' : 'lightgray',
+    'border':           clickCounter > 4 ? '4px solid black' : 'none2'}
+    ">
+
+        <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none2">
+            <p>The click counter <strong>IS GREATER</strong> than 4.</p>
+        </ng-template>
+
+        <ng-template #none2>
+            <p>The click counter is <strong>not greater</strong> than 4.</p>
+        </ng-template>
+    </div>
+
+
+    <div class="play-container" [class.active]="clickCounter > 5">
+        <ng-template [ngIf]="clickCounter > 5" [ngIfElse]="none3">
+            <p>The click counter <strong>IS GREATER</strong> than 5.</p>
+        </ng-template>
+
+        <ng-template #none3>
+            <p>The click counter is <strong>not greater</strong> than 5.</p>
+        </ng-template>
+    </div>
+
+
+    
+    <div class="play-container" [ngClass]="setClasses()">
+            <ng-template [ngIf]="clickCounter > 6" [ngIfElse]="none4">
+                <p>The click counter <strong>IS GREATER</strong> than 6.</p>
+            </ng-template>
+    
+            <ng-template #none4>
+                <p>The click counter is <strong>not greater</strong> than 6.</p>
+            </ng-template>
+        </div>
+    
+
+      
